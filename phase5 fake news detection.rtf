@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red255\green0\blue0;\red64\green0\blue64;\red0\green77\blue187;\red0\green176\blue80;\red0\green0\blue0;\red155\green0\blue211;}
+{\*\generator Riched20 10.0.21996}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\cf1\f0\fs52\lang9 FAKE NEWS DETECTION USING NLP\par
+\cf2\fs40 PHASE 1 : PROBLEM DEFINITION AND DESIGN THINKING\par
+\cf3\fs28 In the digital age, the proliferation of misinformation and fake news has become a significant concern. Fake news can spread rapidly through various online platforms, leading to the distortion of facts, misinformation, and even potential social and political consequences. Detecting and mitigating fake news is a critical challenge, and Natural Language Processing (NLP) has emerged as a valuable tool for addressing this issue.\par
+NLP is a subfield of artificial intelligence that focuses on the interaction between computers and human language. It equips us with the necessary techniques and tools to analyze and understand the text, which is essential for identifying fake news. Here's an overview of how NLP is employed in the context of fake news detection:\par
+Text Analysis: NLP techniques allow for the in-depth analysis of textual content. Algorithms can examine the text for various linguistic features, such as grammar, syntax, sentiment, and tone, which may provide clues about the credibility and intent of the content.\par
+\cf1 Data Collection\cf3 : NLP-based fake news detection systems gather large datasets of news articles and social media posts. These datasets can be used to train machine learning models to recognize patterns associated with fake news.\par
+\cf1 Feature Extraction\cf3 : NLP helps extract relevant features from text data, such as the frequency of specific words, the structure of sentences, and the usage of emotional language. These features are essential for building machine learning models that can distinguish fake news from legitimate content.\par
+\cf1 Machine Learning Models\cf3 : Machine learning algorithms, such as support vector machines, decision trees, and deep neural networks, can be trained on labeled datasets to predict whether a given piece of news is likely to be fake or genuine. NLP features play a crucial role in training and fine-tuning these models.\par
+\cf1 Social Network Analysis\cf3 : NLP can be used to analyze the network structure of information dissemination on social media platforms. It can identify suspicious patterns, such as the rapid spread of unverified information.\par
+\cf1 Fact-Checking: \cf3 NLP techniques can be used to cross-reference news articles and claims with reputable fact-checking databases. This helps identify discrepancies and inaccuracies in the content.\par
+\cf1 Contextual Understanding\cf3 : NLP models can understand the context of a news story, including its source, historical accuracy, and related events. This context is essential for assessing the credibility of a news report.\par
+\cf1 Real-time Monitoring\cf3 : NLP can be used for real-time monitoring of online content to detect and counteract the spread of fake news as it happens.\par
+Fake news detection using NLP is an ongoing area of research and development, with the goal of creating more accurate and robust systems to combat the spread of misinformation. By leveraging NLP techniques and machine learning, we can make significant strides in addressing the challenges posed by fake news in the digital age.\par
+\cf0\fs40 PHASE 2: INNOVATION \par
+\cf3\fs28 Detecting fake news using Natural Language Processing (NLP) is a critical and evolving area of research and innovation. NLP techniques can be applied to analyze the language, structure, and context of news articles and social media posts to determine their credibility. Here's an overview of how NLP can be used for fake news detection:\par
+\cf1\fs32 Data Collection:\cf3\fs28 Collect a large dataset of news articles, social media posts, or any content that you want to analyze for fake news. Ensure that the dataset contains a mix of credible and non-credible sources.\par
+\cf1\fs32 Preprocessing:\cf3\fs28 Clean and preprocess the text data, which includes tasks like tokenization, lowercasing, and removing punctuation and stop words.\par
+\cf1\fs32 Feature Engineering\cf3\fs28 :Extract relevant features from the text data, such as word frequencies, n-grams, and sentiment analysis scores. These features can be used for machine learning models.\par
+\cf1\fs32 Sentiment Analysis:\cf3\fs28 Analyze the sentiment of the content. Fake news articles may exhibit more extreme emotions or negative sentiment compared to legitimate news.\par
+\cf1\fs32 Stance Detection:\cf3\fs28 Determine the stance of the content, i.e., whether it supports, opposes, or is neutral on a particular topic. Fake news might take an extreme stance to manipulate emotions.\par
+\cf1\fs32 Source Credibility:\cf3\fs28 Analyze the credibility of the source. Establish a database of trusted and untrusted sources and use this information to evaluate the content's source.\par
+\cf1\fs32 Fact-Checking:\cf3\fs28 Leverage fact-checking databases and services to compare the claims made in the content with verified facts.\par
+\cf1\fs32 Machine Learning Models:\cf3\fs28 Train supervised machine learning models, such as Support Vector Machines (SVM), Random Forests, or deep learning models like Recurrent Neural Networks (RNNs) or Transformers, to classify content as real or fake based on the features and labels.\par
+\cf1\fs32 Cross-referencing and Verification\cf3\fs28 :Cross-reference the content with other reliable sources and information to check for consistency and accuracy.\par
+\cf1\fs32 Contextual Analysis:\cf3\fs28 Analyze the context in which the content is presented. Fake news often lacks proper context or misuses it to mislead the readers.\par
+\cf1\fs32 Detection of Misleading Techniques:\cf3\fs28 Look for common techniques used in fake news, such as clickbait titles, fabricated quotes, or manipulated images.\par
+\cf1\fs32 User Feedback:\cf3\fs28 Collect user feedback and engagement data to help identify potentially fake content. High levels of engagement without credible sources can be a red flag.\par
+\cf1\fs32 Continuous Learning:\cf3\fs28 Continuously update and improve your model as new fake news techniques emerge. The landscape of misinformation is constantly evolving.\par
+\cf1\fs32 Collaboration:\cf3\fs28 Collaborate with other organizations, fact-checkers, and researchers to improve the accuracy of your fake news detection system.\par
+\cf1\fs32 Explainability:\cf3\fs28 Ensure that your model provides explanations for its predictions, allowing users to understand why a particular piece of content was classified as fake or real.\par
+\cf0\fs40 PHASE 3: DEVELOPMENT PART 1\par
+\cf4\fs32 DATA PREPROCESSING:\par
+\fs40                      \cf3\fs28 Data preprocessing is a process of preparing the raw data and making it suitable for a machine learning model. It is the first and crucial step while creating a machine learning model.\par
+\cf4\fs32 IMPORT LIBRARIES:\par
+\fs28  \cf3 import numpy as np\par
+import pandas as pd\par
+import matplotlib.pyplot as plt\par
+import seaborn as sns\par
+import nltk\par
+import re\par
+import string \par
+\u8203?from sklearn.model_selection import train_test_split\par
+from sklearn.metrics import classification_report\par
+\u8203?import keras\par
+from keras.preprocessing import text,sequence\par
+from keras.models import Sequential\par
+from keras.layers import Dense,Embedding,LSTM,Dropout\par
+\u8203?import warnings\par
+warnings.filterwarnings('ignore')\par
+\u8203?import os\par
+for dirname, _, filenames in os.walk('/kaggle/input'):\par
+    for filename in filenames:\par
+        print(os.path.join(dirnamefilename))\par
+\cf4\u8203?\par
+\fs32\u8203?LOAD DATA:\par
+\cf3\fs28 real_data = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/True.csv')\par
+fake_data = pd.read_csv('/kaggle/input/fake-and-real-news-dataset/Fake.csv')\par
+real_data.head()\par
+fake_data.head()\par
+\cf5 #add column\cf4\fs40\par
+\cf3\fs28 real_data['target'] = 1\par
+fake_data['target'] = 0\par
+\cf5 #Merging the 2 datasets\par
+\cf3 data = pd.concat([real_data, fake_data], ignore_index=True, sort=False\cf4\fs40 )\par
+\cf3\fs28 data.head()\cf4\fs40\par
+\cf3\fs28 data.isnull().sum()\par
+\cf0\fs40 PHASE 4: DEVELOPMENT PART 2\par
+\cf4\fs32 VISUALIZATION:\par
+\cf6 1. Count of Fake and Real Data\par
+\cf3\fs28 print(data["target"].value_counts())\par
+fig, ax = plt.subplots(1,2, figsize=(19, 5))\par
+g1 = sns.countplot(data.target,ax=ax[0],palette="pastel");\par
+g1.set_title("Count of real and fake data")\par
+g1.set_ylabel("Count")\par
+g1.set_xlabel("Target")\par
+g2 = plt.pie(data["target"].value_counts().values,explode=[0,0],labels=data.target.value_counts().index, autopct='%1.1f%%',colors=['SkyBlue','PeachPuff'])\par
+fig.show()\par
+\cf6 2. Distribution of The Subject According to Real and Fake Data\cf3\par
+print(data.subject.value_counts())\par
+plt.figure(figsize=(10, 5))\par
+\par
+ax = sns.countplot(x="subject",  hue='target', data=data, palette="pastel")\par
+plt.title("Distribution of The Subject According to Real and Fake Data")\par
+\cf4\fs32 DATA CLEANING:\par
+\cf3\fs28 data['text']= data['subject'] + " " + data['title'] + " " + data['text']\par
+del data['title']\par
+del data['subject']\par
+del data['date']\par
+data.head()\par
+first_text = data.text[10]\par
+first_text\par
+Removal of HTML Contents:\par
+from bs4 import BeautifulSoup\par
+\par
+soup = BeautifulSoup(first_text, "html.parser")\par
+first_text = soup.get_text()\par
+first_text\par
+Removal of Punctuation Marks and Special Characters:\par
+irst_text = re.sub('\\[[^]]*\\]', ' ', first_text)\par
+first_text = re.sub('[^a-zA-Z]',' ',first_text)  # replaces non-alphabets with spaces\par
+first_text = first_text.lower() # Converting from uppercase to lowercase\par
+first_text\par
+\cf6\fs32 Removal of Stopwords:\par
+\cf3\fs28 nltk.download("stopwords")   \par
+from nltk.corpus import stopwords  \par
+\par
+# we can use tokenizer instead of split\par
+first_text = nltk.word_tokenize(first_text)\par
+\cf4\fs32 Lemmatization:\par
+\cf3\fs28 lemma = nltk.WordNetLemmatizer()\par
+first_text = [ lemma.lemmatize(word) for word in first_text] \par
+\par
+first_text = " ".join(first_text)\par
+first_text\par
+\cf6\fs32 1.WordCloud for Real News :\par
+\cf3\fs28 rom wordcloud import WordCloud,STOPWORDS\par
+plt.figure(figsize = (15,15))\par
+wc = WordCloud(max_words = 500 , width = 1000 , height = 500 , stopwords = STOPWORDS).generate(" ".join(data[data.target == 1].text))\par
+plt.imshow(wc , interpolation = 'bilinear')\par
+\cf6\fs32 2.WordCloud for Fake News :\par
+\cf3\fs28 plt.figure(figsize = (15,15))\par
+wc = WordCloud(max_words = 500 , width = 1000 , height = 500 , stopwords = STOPWORDS).generate(" ".join(data[data.target == 0].text))\par
+plt.imshow(wc , interpolation = 'bilinear')\par
+\par
+\cf0\fs22\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
